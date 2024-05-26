@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:book_tracker/screens/menu.dart';
 
-import '../screens/trackerlist_form.dart';
+import 'package:book_tracker/screens/list_book.dart';
+import 'package:book_tracker/screens/trackerlist_form.dart';
 // TODO: Impor halaman TrackerFormPage jika sudah dibuat
 
 class LeftDrawer extends StatelessWidget {
@@ -62,6 +63,17 @@ class LeftDrawer extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => TrackerFormPage(),
                   ));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.library_books_rounded),
+            title: const Text('Daftar Buku'),
+            onTap: () {
+              // Route menu ke halaman buku
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const BookPage()),
+              );
             },
           ),
         ],
